@@ -6,5 +6,4 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  before_action :authenticate_user!
 end

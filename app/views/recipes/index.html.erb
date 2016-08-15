@@ -14,6 +14,7 @@
 
   <tbody>
     <% @recipes.each do |recipe| %>
+    <% if recipe.user == current_user %>
       <tr>
         <td><%= recipe.name %></td>
         <td><%= recipe.status %></td>
@@ -23,6 +24,7 @@
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+   <% end %> 
   </tbody>
 </table>
 
