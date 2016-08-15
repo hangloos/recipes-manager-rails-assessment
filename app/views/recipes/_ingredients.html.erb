@@ -1,4 +1,4 @@
 <% @recipe.ingredients.each do |ingredient| %>
-  <%= ingredient.name %> | <%= ingredient.quantity %> | <%=link_to "Delete Ingredient", recipe_ingredient_path(ingredient) ,method: :delete, :confirm => "Are you sure you want to delete this ingredient" %>
+  <%= ingredient.name %> | <%= ingredient.quantity %> | <%=link_to "Delete Ingredient", recipe_ingredient_path(ingredient) ,method: :delete, :confirm => "Are you sure you want to delete this ingredient" %> | <%= link_to "Edit", edit_recipe_ingredient_path(@recipe, ingredient) %>
   <br></br>
   <% end %>

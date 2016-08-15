@@ -43,7 +43,7 @@ Steps:
 9. setup so you can't access another recipe by changing browser. edit them this way. - x
 10. change status button like before - x
 11. show on show page of recipe that you havent cooked or not. - x
-12. show all ingredients on recipe show
+12. show all ingredients on recipe show - x
 
 
 

@@ -14,11 +14,11 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/new
   def new
-    @ingredient = Ingredient.new
   end
 
   # GET /ingredients/1/edit
   def edit
+    @recipe = set_recipe
   end
 
   # POST /ingredients
@@ -40,9 +40,10 @@ class IngredientsController < ApplicationController
   # PATCH/PUT /ingredients/1
   # PATCH/PUT /ingredients/1.json
   def update
+    @recipe = set_recipe
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to @recipe, notice: 'Ingredient was successfully updated.' }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit }
@@ -55,7 +56,7 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1.json
   def destroy
     @ingredient = Ingredient.find(params[:recipe_id]).destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe = set_recipe
     respond_to do |format|
       format.html { redirect_to @recipe, notice: 'Ingredient was successfully destroyed.' }
       format.json { head :no_content }
@@ -71,5 +72,9 @@ class IngredientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
       params.require(:ingredient).permit(:name, :quantity)
+    end
+
+    def set_recipe
+      @recipe = Recipe.find(params[:recipe_id])
     end
 end
