@@ -1,0 +1,79 @@
+# Specifications for the Rails Assessment
+
+Specs:
+- [x] Using Ruby on Rails for the project
+- [ ] Include at least one has_many relationship (x has_many y e.g. User has_many Recipes) 
+- [ ] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
+- [ ] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
+- [ ] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
+- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+- [ ] Include signup (how e.g. Devise)
+- [ ] Include login (how e.g. Devise)
+- [ ] Include logout (how e.g. Devise)
+- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+
+Confirm:
+- [ ] The application is pretty DRY
+- [ ] Limited logic in controllers
+- [ ] Views use helper methods if appropriate
+- [ ] Views use partials if appropriate
+
+<%= f.fields_for :categories, @recipe.categories do |cat| %>
+  <%= cat.label :categories %>
+  <%= cat.collection_check_boxes :categories_id, Category.all, :id, :name %>
+  <% end %>
+
+
+Steps:
+
+Create Devise - X
+Create Each Migration model, controller using resource - x
+Add associations - x
+Seed database - x
+Test my associations - x
+setup homepage ( includes signup, signin, information on the program, current date) - x 
+test login - x
+setup logout link to work - x
+test signup - x 
+setup faceboook login, add to homepage - x
+create recipe form  - x
+show current recipes with links on homepage - x
+make nested resource - commments inside recipes, also ingredients insdie recipe.  - x
+add button - cooked recipe on show page, delete recipe and add comment recipe - x
+cancancan - authorize so you can only see, edit etc your own recipes. 
+add a before action _ set_recipe
+
+add ingredients ( need drop down and also text field)
+edit ingredients on a recipe
+
+
+**Not able to recognize that a user is signed in when its facebook, so cant show their name or also change the links based on that. 
+
+
+nested resource - commments inside recipes, also ingredients insdie recipe. 
+
+
+Recipe Manager
+
+1. Have at least one join table. This table should have each id from the other tables its joining as well as additional information like content, or permission
+
+2. include validations in your models to make sure all information needed it inputted.
+
+3. Scope method. So like a method giving us the overdue tasks. Use these methods to display different information. ** cooked a recipe changes the status. show all that have cooked . show all that havent cooked. show rating for that recipe.
+
+4. Nested form with a custom attribute writer. this is initiated in our strong params. could use the accepts_nested_attributes_for method. 
+
+5. devise authentication
+
+6. faceboook login capability
+
+7. nested resources. profiles/1/pictures/new. being able to create an item from inside another. 
+
+8. display validation errors. Your fields should be enclosed within a fields_with_errors class and error messages describing the validation failures must be present within the view. Make sure to include those 3 sentences in the layout application for this. 
+
+9. DRY!! Don’t repeat. all logic in controllers is methods in your models. use partials in views. 
