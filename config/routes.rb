@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :categories
   
-  resources :recipe_categories
-  resources :recipeingredients
   
   resources :recipes do 
     resources :ingredients, :comments

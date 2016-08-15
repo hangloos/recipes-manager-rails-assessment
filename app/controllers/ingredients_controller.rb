@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :set_ingredient, only: [:show, :edit, :update]
 
   # GET /ingredients
   # GET /ingredients.json
@@ -54,9 +54,10 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1
   # DELETE /ingredients/1.json
   def destroy
-    @ingredient.destroy
+    @ingredient = Ingredient.find(params[:recipe_id]).destroy
+    @recipe = Recipe.find(params[:id])
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.' }
+      format.html { redirect_to @recipe, notice: 'Ingredient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

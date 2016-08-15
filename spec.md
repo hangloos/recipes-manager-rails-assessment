@@ -41,9 +41,13 @@ Steps:
 7.1 Add home link in header. - x
 8. setup facebook authorization, add to homepage. - x
 9. setup so you can't access another recipe by changing browser. edit them this way. - x
-10. change status button like before
-11. show on show page of recipe that you havent cooked or not. 
+10. change status button like before - x
+11. show on show page of recipe that you havent cooked or not. - x
 12. show all ingredients on recipe show
+
+
+
+cant go to show or edit for ingre and comment if not yours
 
 
 
