@@ -38,10 +38,16 @@ Steps:
 5. homepage - x
 6. user authentication devise and only show current_user stuff - x
 7. logout link works - x
-7.1 Add home link in header. 
-8. setup facebook authorization, add to homepage. 
-9. setup so you can't access another recipe by changing browser. edit them this way. 
+7.1 Add home link in header. - x
+8. setup facebook authorization, add to homepage. - x
+9. setup so you can't access another recipe by changing browser. edit them this way. - x
 10. change status button like before
+11. show on show page of recipe that you havent cooked or not. 
+12. show all ingredients on recipe show
+
+
+
+**cant check if someone is logged in via facebook???
 
 
 Create Devise - X

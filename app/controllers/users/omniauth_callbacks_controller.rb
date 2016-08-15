@@ -2,18 +2,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
-
-    if @user.persisted?
-      session[:facebook_id] = @user.id
-      sign_in_and_redirect @user, root_path
-    else
-      redirect_to root_path
-    end
+    sign_in_and_redirect @user
   end
 
-  def failure
-    redirect_to root_path
-  end
 end
 
-#"HTTP_REFERER"=>"https://www.facebook.com/"

@@ -6,4 +6,15 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+
+
+  def cooked_or_not
+    if self.status
+      "You have cooked this recipe!"
+    else
+      "You have not cooked this recipe yet."
+    end
+  end
+
+
 end

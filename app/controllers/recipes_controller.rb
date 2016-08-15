@@ -12,6 +12,9 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    if @recipe.user != current_user
+      redirect_to root_path
+    end
   end
 
   # GET /recipes/new
@@ -21,6 +24,9 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    if @recipe.user != current_user
+      redirect_to root_path
+    end
   end
 
   # POST /recipes
@@ -61,6 +67,13 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def update_status
+    @recipe = Recipe.find(params[:id])
+    @recipe.status = true
+    @recipe.save
+    redirect_to recipe_path(@recipe)
   end
 
   private
