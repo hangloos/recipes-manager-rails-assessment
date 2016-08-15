@@ -31,6 +31,19 @@ Confirm:
 
 Steps:
 
+1. created devise - x
+2. each model, controller - x
+3. add associations - x
+4. seed database - x
+5. homepage - x
+6. user authentication devise and only show current_user stuff - x
+7. logout link works - x
+7.1 Add home link in header. 
+8. setup facebook authorization, add to homepage. 
+9. setup so you can't access another recipe by changing browser. edit them this way. 
+10. change status button like before
+
+
 Create Devise - X
 Create Each Migration model, controller using resource - x
 Add associations - x
