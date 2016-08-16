@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
+    if @comment.recipe.user != current_user
+      redirect_to root_path
+    end
   end
 
   # GET /comments/new
@@ -21,6 +24,9 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @recipe = set_recipe
+    if @comment.recipe.user != current_user
+      redirect_to root_path
+    end
   end
 
   # POST /comments
