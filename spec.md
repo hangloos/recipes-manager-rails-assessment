@@ -55,12 +55,13 @@ Steps:
 
 - all recipes that you have cooked - x
 
-19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. 
+19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. - x
 20 - add a instructions section in the database for recipe. I need to add the field to the forms and also to the params. 
 21 - go through categories. make sure all works. CRUD. 
 22. set recipe home page to list the categories of it at the top. Can edit and add more categories.not nested. make sure you cant view them by changing the url
 
 **cant check if someone is logged in via facebook???
+**would like to be able to type in a number and then get all the ratings for that. current only shows 1. 
 
 
 Create Devise - X
