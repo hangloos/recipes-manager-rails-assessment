@@ -7,8 +7,7 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
 
-attr_reader :ingredient_name
-
+  accepts_nested_attributes_for :ingredients, :reject_if => :all_blank
 
   def cooked_or_not
     if self.status

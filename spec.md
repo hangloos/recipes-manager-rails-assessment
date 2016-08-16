@@ -81,8 +81,6 @@ create recipe form  - x
 show current recipes with links on homepage - x
 make nested resource - commments inside recipes, also ingredients insdie recipe.  - x
 add button - cooked recipe on show page, delete recipe and add comment recipe - x
-cancancan - authorize so you can only see, edit etc your own recipes. 
-add a before action _ set_recipe
 
 add ingredients ( need drop down and also text field)
 edit ingredients on a recipe
@@ -96,20 +94,20 @@ nested resource - commments inside recipes, also ingredients insdie recipe.
 
 Recipe Manager
 
-1. Have at least one join table. This table should have each id from the other tables its joining as well as additional information like content, or permission
+1. Have at least one join table. This table should have each id from the other tables its joining as well as additional information like content, or permission - x
 
-2. include validations in your models to make sure all information needed it inputted.
+2. include validations in your models to make sure all information needed it inputted.- x
 
-3. Scope method. So like a method giving us the overdue tasks. Use these methods to display different information. ** cooked a recipe changes the status. show all that have cooked . show all that havent cooked. show rating for that recipe.
+3. Scope method. So like a method giving us the overdue tasks. Use these methods to display different information. ** cooked a recipe changes the status. show all that have cooked . show all that havent cooked. show rating for that recipe. - x
 
 4. Nested form with a custom attribute writer. this is initiated in our strong params. could use the accepts_nested_attributes_for method. 
 
-5. devise authentication
+5. devise authentication - x
 
-6. faceboook login capability
+6. faceboook login capability - x
 
-7. nested resources. profiles/1/pictures/new. being able to create an item from inside another. 
+7. nested resources. profiles/1/pictures/new. being able to create an item from inside another. - x
 
-8. display validation errors. Your fields should be enclosed within a fields_with_errors class and error messages describing the validation failures must be present within the view. Make sure to include those 3 sentences in the layout application for this. 
+8. display validation errors. Your fields should be enclosed within a fields_with_errors class and error messages describing the validation failures must be present within the view. Make sure to include those 3 sentences in the layout application for this. - x
 
-9. DRY!! Don’t repeat. all logic in controllers is methods in your models. use partials in views. 
+9. DRY!! Don’t repeat. all logic in controllers is methods in your models. use partials in views. - x

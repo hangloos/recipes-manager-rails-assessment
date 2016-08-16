@@ -1,9 +1,4 @@
 
-<%= form_for @recipe do |f| %>
-  Ingredient: <%= f.collection_select :ingredient_name, Ingredient.all, :id, :name %>
-  <%=f.submit "Add Ingredient"%>
-<% end %>
-
 <br></br>
 
 <% @recipe.ingredients.each do |ingredient| %>
