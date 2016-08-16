@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Status</th>
+      <th>Cooked</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -17,7 +17,7 @@
     <% if recipe.user == current_user %>
       <tr>
         <td><%= recipe.name %></td>
-        <td><%= recipe.status %></td>
+        <td><%= recipe.cooked_or_not %></td>
         <td><%= recipe.user_id %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
@@ -32,3 +32,7 @@
 
 <%= link_to 'New Recipe', new_recipe_path %>
 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
+<%= render partial: 'ratings' %>
+
+

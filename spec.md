@@ -52,6 +52,9 @@ Steps:
 
 17 - add validation messages in layout - x
 18 - add validations to models - x
+
+- all recipes that you have cooked - x
+
 19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. 
 20 - add a instructions section in the database for recipe. I need to add the field to the forms and also to the params. 
 21 - go through categories. make sure all works. CRUD. 
