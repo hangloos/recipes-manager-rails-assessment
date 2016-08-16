@@ -1,6 +1,5 @@
 class Recipe < ApplicationRecord
-  has_many :recipe_ingredients
-  has_many :ingredients, through: :recipe_ingredients
+  has_many :ingredients
   has_many :recipe_categories
   has_many :categories, through: :recipe_categories
   belongs_to :user
@@ -8,7 +7,7 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
 
-
+attr_reader :ingredient_name
 
 
   def cooked_or_not
@@ -18,6 +17,8 @@ class Recipe < ApplicationRecord
       "You have not cooked this recipe yet."
     end
   end
+
+
 
 
 

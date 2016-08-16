@@ -76,13 +76,6 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
-  #def ratings_search(rating)
-  #  binding.pry
-  #  @rating_comments = Comment.where(rating: params[:rating])
- #   @all_comments = current_user.comments
-  #  @comments = @rating_comments & @all_comments
- #   redirect_to controller => 'recipes', :action => 'index', :comment_id => 1
- # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
