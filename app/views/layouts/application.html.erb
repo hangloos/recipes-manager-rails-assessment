@@ -12,6 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
     <%= yield %>
   </body>
 </html>

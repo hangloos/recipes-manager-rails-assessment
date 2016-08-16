@@ -46,13 +46,13 @@ Steps:
 12. show all ingredients on recipe show - x
 13 - can edit ingredients - x
 16. need to create a new comment - x
-14 - cant go to show or edit for ingre and comment if not yours 
-15 - check why the comment nested params was opposite but ingredients worked???
-17 - add validation messages in layout
-18 - add validations to models
+14 - cant go to show or edit for ingre and comment if not yours - x
+15 - check why the comment nested params was opposite but ingredients worked??? - x
 
+
+17 - add validation messages in layout - x
+18 - add validations to models - x
 19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. 
-
 20 - add a instructions section in the database for recipe. I need to add the field to the forms and also to the params. 
 21 - go through categories. make sure all works. CRUD. 
 22. set recipe home page to list the categories of it at the top. Can edit and add more categories.not nested. make sure you cant view them by changing the url
