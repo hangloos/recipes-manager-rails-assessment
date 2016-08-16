@@ -2,5 +2,5 @@
     <strong>Cooked this recipe?:</strong>
     <%= @recipe.cooked_or_not %> | <%= button_to "Cooked This Recipe?", :method => :post, :controller => 'recipes', :action => 'update_status', id: @recipe.id %>
   <% else %>
-    <strong>Cooked this recipe?:</strong> <%= @recipe.cooked_or_not %> | <%= button_to "Add Comment", new_recipe_comment_path(@recipe) %>
+    <strong>Cooked this recipe?:</strong> <%= @recipe.cooked_or_not %> | <%= link_to "Add Comment", new_recipe_comment_path(@recipe) %>
   <% end %>

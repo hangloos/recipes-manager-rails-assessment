@@ -44,10 +44,14 @@ Steps:
 10. change status button like before - x
 11. show on show page of recipe that you havent cooked or not. - x
 12. show all ingredients on recipe show - x
+13 - can edit ingredients
+14 - cant go to show or edit for ingre and comment if not yours
+15 - check why the comment nested params was opposite but ingredients worked???
+16. need to create a new comment
+17 - add validation messages in layout
+18 - add validations to models
 
-
-
-cant go to show or edit for ingre and comment if not yours
+19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. 
 
 
 

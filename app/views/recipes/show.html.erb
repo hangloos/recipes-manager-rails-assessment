@@ -12,6 +12,10 @@
 <p>
   <%= render partial: 'recipes/ingredients', locals: {recipe: @recipe} %>
 </p>
+
+<p>
+  <%= render partial: 'recipes/comments', locals: {recipe: @recipe} %>
+</p>
   
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
