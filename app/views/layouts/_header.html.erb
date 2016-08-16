@@ -1,6 +1,8 @@
 <%if user_signed_in? %>
     <%= link_to "Home", root_path %>
     <%= link_to "Recipes Home", recipes_path %>
+    <%= link_to "Back", :back %>
     <% else %>
     <%= link_to "Home", root_path %>
+    <%= link_to "Back", :back %>
     <% end %>

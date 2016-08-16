@@ -1,3 +1,4 @@
 <% @recipe.comments.each do |comment| %>
-Rating: <%= comment.rating %> | Comments: <%= comment.comments %>
+Rating: <%= comment.rating %> | Comments: <%= comment.comments %> | <%= link_to "Delete Comment", recipe_comment_path(@recipe,comment), method: :delete, :confirm => "Are you sure you want to delete this comment" %> | <%= link_to "Edit", edit_recipe_comment_path(@recipe, comment) %>
+<br></br>
 <% end %>

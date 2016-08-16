@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :edit, :update]
+  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   # GET /ingredients
   # GET /ingredients.json
@@ -10,6 +10,9 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show
+    if @ingredient.recipes.each{|recipe| recipe.user != current_user}
+      redirect_to root_path
+    end
   end
 
   # GET /ingredients/new
@@ -19,6 +22,9 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1/edit
   def edit
     @recipe = set_recipe
+    if @recipe.user != current_user
+      redirect_to root_path
+    end
   end
 
   # POST /ingredients
@@ -55,7 +61,7 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1
   # DELETE /ingredients/1.json
   def destroy
-    @ingredient = Ingredient.find(params[:recipe_id]).destroy
+    @ingredient.destroy
     @recipe = set_recipe
     respond_to do |format|
       format.html { redirect_to @recipe, notice: 'Ingredient was successfully destroyed.' }
