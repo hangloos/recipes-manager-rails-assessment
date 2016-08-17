@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @recipe = set_recipe
   end
 
   # GET /categories/1
@@ -14,8 +15,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
-    @recipes =  @category.recipes.build
+    @recipe = set_recipe
+    @category = @recipe.categories.build
   end
 
   # GET /categories/1/edit
@@ -25,11 +26,13 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(category_params)
+    @recipe = set_recipe
+    @category = @recipe.categories.build(category_params)
+    @recipe.categories << @category
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to @recipe, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -70,6 +73,10 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :recipes_attributes => [:id])
+      params.require(:category).permit(:name)
+    end
+
+    def set_recipe
+      @recipe = Recipe.find(params[:recipe_id])
     end
 end

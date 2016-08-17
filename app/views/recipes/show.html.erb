@@ -5,6 +5,13 @@
   <%= @recipe.name %>
 </p>
 
+<% @recipe.categories.map do |category| %>
+<%= category.name %>
+<br>
+<% end %>
+<%= link_to "Add New Category", new_recipe_category_path(@recipe) %>
+
+
 <p>
  <%= render 'recipes/cooked' %>
 </p>

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :categories
   
   
   resources :recipes do 
-    resources :ingredients, :comments
+    resources :ingredients, :comments, :categories
   end
 
   root 'welcome#index'
