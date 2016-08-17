@@ -16,6 +16,15 @@
     <%= f.text_field :name %>
   </div>
 
+  <br></br>
+
+  <% current_user.recipes.each do |recipe| %>
+  <div class="field">
+   <%=recipe.name%> <%= f.check_box :recipe_name %>
+   <%= f.hidden_field :id, :value => recipe.id %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

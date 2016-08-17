@@ -58,8 +58,11 @@ Steps:
 19 - make some scope methods to show all the recipes you cooked. or ones with highest ratings etc. - x
 20 - add a instructions section in the database for recipe. I need to add the field to the forms and also to the params. - x
 
-20.1 - when making recipe, you need to add ingredients to it. 
+** Need to get nested resources for ingredients to work
+** Need to get it so you can add a category to a recipe. 
 
+
+20.1 - when making recipe, you need to add ingredients to it. 
 21 - go through categories. make sure all works. CRUD. 
 22. set recipe home page to list the categories of it at the top. Can edit and add more categories.not nested. make sure you cant view them by changing the url
 
@@ -100,7 +103,7 @@ Recipe Manager
 
 3. Scope method. So like a method giving us the overdue tasks. Use these methods to display different information. ** cooked a recipe changes the status. show all that have cooked . show all that havent cooked. show rating for that recipe. - x
 
-4. Nested form with a custom attribute writer. this is initiated in our strong params. could use the accepts_nested_attributes_for method. 
+4. Nested form with a custom attribute writer. this is initiated in our strong params. could use the accepts_nested_attributes_for method. - x
 
 5. devise authentication - x
 

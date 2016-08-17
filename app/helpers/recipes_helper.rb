@@ -4,8 +4,8 @@ module RecipesHelper
     @rating_comments = Comment.where(rating: rating)
     @all_comments = current_user.comments
     @comments = @rating_comments & @all_comments
-    @comments.each do |comment|
-      return "#{comment.recipe.name}"
+    @comments.map do |comment|
+      comment.recipe.name
     end
   end
 
