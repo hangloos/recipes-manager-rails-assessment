@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    binding.pry
+    raise params.inspect
     @recipe = current_user.recipes.build(recipe_params)
 
     respond_to do |format|

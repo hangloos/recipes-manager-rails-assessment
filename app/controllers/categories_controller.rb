@@ -15,6 +15,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    @recipes =  @category.recipes.build
   end
 
   # GET /categories/1/edit
@@ -24,7 +25,6 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    binding.pry
     @category = Category.new(category_params)
 
     respond_to do |format|
@@ -70,6 +70,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :recipes_attributes => [:id])
     end
 end

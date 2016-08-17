@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+   
+  </div>
 
   <div class="field">
     <%= f.label :name %>
@@ -29,6 +31,8 @@
   <div class="field">
     <%= f.hidden_field :user_id %>
   </div>
+
+  <%= render 'recipes/categories' , f: f%>
 
   <%= render 'recipes/ingredientsfields', f: f %>
   

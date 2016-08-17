@@ -1,0 +1,8 @@
+<% Category.all.each do |category| %>
+  <%= f.fields_for :categories do |builder| %>
+  <div class="field">
+
+
+    <%= category.name %><%= builder.check_box :id ,{}, category.id, "" %>
+    <% end %>
+    <% end %>

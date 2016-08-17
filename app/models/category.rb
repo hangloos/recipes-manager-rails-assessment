@@ -4,5 +4,6 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
 
+  accepts_nested_attributes_for :recipe_categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
 
 end
