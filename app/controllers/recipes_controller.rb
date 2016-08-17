@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = current_user.recipes.build
-    @ingredients = 12.times {@recipe.ingredients.build }
+    @ingredients = 12.times {@recipe.ingredients.build}
   end
 
   # GET /recipes/1/edit
@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    raise params.inspect
+
     @recipe = current_user.recipes.build(recipe_params)
 
     respond_to do |format|

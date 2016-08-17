@@ -6,20 +6,20 @@
 </p>
 
 <p>
- <%= render partial: 'recipes/cooked' %>
+ <%= render 'recipes/cooked' %>
 </p>
 
 <p>
-  <%= render partial: 'recipes/ingredients', locals: {recipe: @recipe} %>
+  <%= render 'recipes/ingredients', recipe: @recipe %>
 </p>
 
 <p>
-  <%= render partial: 'recipes/comments', locals: {recipe: @recipe} %>
+  <%= render 'recipes/comments', recipe: @recipe %>
 </p>
 
 <p>
-  <%= render partial: 'recipes/instructions', locals: {recipe: @recipe} %>
+  <%= render  'recipes/instructions', recipe: @recipe %>
 </p>
   
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> 

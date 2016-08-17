@@ -7,8 +7,10 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
 
-  accepts_nested_attributes_for :ingredients, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
-  accepts_nested_attributes_for :categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :ingredients, :reject_if => :all_blank
+  #:reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
+  #accepts_nested_attributes_for :recipe_categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
+  #accepts_nested_attributes_for :categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
 
 
   def cooked_or_not
