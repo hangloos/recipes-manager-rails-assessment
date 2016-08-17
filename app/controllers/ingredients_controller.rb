@@ -34,12 +34,11 @@ class IngredientsController < ApplicationController
   # POST /ingredients.json
   def create
     @recipe = set_recipe
-    @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.recipe = @recipe
+    @ingredient = @recipe.ingredients.build(ingredient_params)
+
 
     respond_to do |format|
       if @ingredient.save
-        @recipe.ingredients << @ingredient
         format.html { redirect_to @recipe, notice: 'Ingredient was successfully created.' }
         format.json { render :show, status: :created, location: @ingredient }
       else
