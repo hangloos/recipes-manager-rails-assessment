@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = current_user.recipes.build
     @ingredients = 12.times {@recipe.ingredients.build}
+    @recipe.recipe_categories.build.build_category
   end
 
   # GET /recipes/1/edit

@@ -9,10 +9,9 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank
   #:reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
-  #accepts_nested_attributes_for :recipe_categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
-  #accepts_nested_attributes_for :categories, :reject_if => lambda { |a| a[:when].blank? || a[:where].blank? }, :allow_destroy => true
-
-
+  accepts_nested_attributes_for :recipe_categories, :reject_if => :all_blank
+  #accepts_nested_attributes_for :categories, :reject_if => :all_blank
+  
   def cooked_or_not
     if self.status
       "You have cooked this recipe!"

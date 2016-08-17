@@ -18,17 +18,6 @@
 
   <br></br>
 
-  <% current_user.recipes.each do |recipe| %>
-  <%= f.fields_for :recipes do |builder| %>
-  <div class="field">
-
-
-    <%= recipe.name %><%= builder.check_box :id ,{}, recipe.id, "" %>
-   
-  </div>
-  <% end %>
-  <% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>
