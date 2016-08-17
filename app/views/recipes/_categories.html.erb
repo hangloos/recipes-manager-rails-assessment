@@ -1,8 +1,5 @@
-<% Category.all.each do |category| %>
-  <%= f.fields_for :categories do |builder| %>
-  <div class="field">
-
-
-    <%= category.name %><%= builder.check_box :id ,{}, category.id, "" %>
-    <% end %>
-    <% end %>
+<% @recipe.categories.map do |category| %>
+<%= category.name %>
+<br>
+<% end %>
+<%= link_to "Add New Category", new_recipe_category_path(@recipe) %>

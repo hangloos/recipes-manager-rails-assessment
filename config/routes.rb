@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   post '/change_status' => 'recipes#update_status'
   post '/ratings_search' => 'recipes#ratings_search'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
