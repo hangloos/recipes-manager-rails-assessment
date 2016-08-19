@@ -73,7 +73,7 @@ class RecipesController < ApplicationController
   end
 
   def update_status
-    @recipe = Recipe.find(params[:id])
+    @recipe = set_recipe
     @recipe.status = true
     @recipe.save
     redirect_to recipe_path(@recipe)

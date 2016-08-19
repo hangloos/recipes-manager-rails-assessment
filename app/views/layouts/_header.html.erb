@@ -1,7 +1,11 @@
-<%if user_signed_in? %>
+    <% if user_signed_in? && current_user.fbook_in == true %>
+    <%= link_to "Test", root_path%>
+    
+    <%elsif user_signed_in? %>
     <%= link_to "Home", root_path %>
     <%= link_to "Recipes Home", recipes_path %>
     <%= link_to "Back", :back %>
+
     <% else %>
     <%= link_to "Home", root_path %>
     <%= link_to "Back", :back %>
