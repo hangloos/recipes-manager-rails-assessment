@@ -35,6 +35,8 @@ gem 'omniauth-facebook'
 
 gem 'faker'
 gem 'pry'
+gem 'active_model_serializers', '~> 0.10.0'
+
 
 
 
