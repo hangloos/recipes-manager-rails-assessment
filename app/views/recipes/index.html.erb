@@ -5,27 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Cooked</th>
-      <th>User</th>
+    <button id="showrecipes">Show Recipes</button>
+      <th id="recipename">Name</th>
+      <th id="recipecooked">Cooked</th>
+      <th id="recipeuser">User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-    <% if recipe.user == current_user %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.cooked_or_not %></td>
-        <td><%= recipe.user_id %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-   <% end %> 
-  </tbody>
+  
 </table>
 
 <br>
