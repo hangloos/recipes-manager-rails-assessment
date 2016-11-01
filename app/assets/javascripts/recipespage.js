@@ -11,7 +11,9 @@ function attachListeners(){$("#showrecipes").on("click", function(){
     data.forEach(function(recipe){
       
       if(recipe.user_id.toString() === user_id){
-      $("tbody").append("<li>" + recipe.name + "</li>")
+      //$("tbody").append("<li>" + recipe.name + "</li>")
+      var recipelink = "/recipes/" + recipe.id
+      $("tbody").append('<li><a href="' + recipelink + '">' + recipe.name+'</a></li>')
       }
     })
   })

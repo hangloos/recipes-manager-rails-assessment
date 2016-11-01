@@ -5,7 +5,9 @@ Step 1: Must render at least one index page (index resource - 'list of things') 
 Notes - On the users home page. show all the recipes from that user. use ajax to get it and then convert the objects from active record to JSON to show on the page. 
 
 
-- add javascript 
+- add javascript x 
+- make link with <li>
+- add the prevent default
 
 
 
