@@ -3,19 +3,17 @@
   });
 
 
+
 function attachListeners(){$("#showrecipes").on("click", function(){
+
   $.get('/recipes.json', function(data){
     var recipes = data
-
-
-    //recipes.forEach(function(recipe){
-      $("#recipename").html(data[4].name)
-      $("#recipecooked").html(data[4].status)
-      $("#recipeuser").html(data[4].user_id)
-
-
-    //})
+    data.forEach(function(recipe){
+      
+      if(recipe.user_id.toString() === user_id){
+      $("tbody").append("<li>" + recipe.name + "</li>")
+      }
+    })
   })
-});
+})
 }
-

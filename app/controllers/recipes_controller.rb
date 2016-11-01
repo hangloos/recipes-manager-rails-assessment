@@ -79,6 +79,9 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def get_current_user
+    render json: {id: current_user.id}
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -90,4 +93,6 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:name, :status, :user_id, :instructions, :ingredients_attributes => [:id,:name,:quantity])
     end
+
+   
 end
