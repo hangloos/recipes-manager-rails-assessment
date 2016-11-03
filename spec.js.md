@@ -5,9 +5,17 @@ Step 1: Must render at least one index page (index resource - 'list of things') 
 Notes - On the users home page. show all the recipes from that user. use ajax to get it and then convert the objects from active record to JSON to show on the page. 
 
 
+Step 2: create recipe should use jquery and prevent default. 
+
+
+Step 3: Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend. For example, in the blog domain, you might allow a user to sift through the posts by clicking a 'Next' button on the posts show page, with the next post being fetched and rendered via JQuery/AJAX.
+
+Notes - Recipes/46/ingredients show page. click next through all the ingredients. 
+
+
 - add javascript - x 
 - make link with <li> - x
-- add the prevent default
+- add the prevent default - x
 
 
 

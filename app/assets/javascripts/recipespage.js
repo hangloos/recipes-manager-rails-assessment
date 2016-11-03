@@ -6,9 +6,18 @@
 
 function attachListeners(){
 
-  $("#showrecipes").on("click", function(){
+  $("#showrecipes").on("click", function(event){
     showrecipes()
+    event.preventDefault();
   })
+
+  $("#createrecipe").on("click", function(event){
+    createrecipe()
+    event.preventDefault();
+  })
+
+
+  }
 
 
   function showrecipes(){
@@ -22,4 +31,6 @@ function attachListeners(){
     })
   })
   }
-  } 
+
+
+
