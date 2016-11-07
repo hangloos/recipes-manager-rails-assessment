@@ -16,7 +16,7 @@ function attachListeners(){
     var recipeStatus = $('#recipe_status').val()
     var recipeInstructions = $('#recipe_instructions').val()
     var recipeUser = $('#recipe_user_id').val()
-    createRecipe(event)
+    createRecipe(recipeName, recipeStatus, recipeInstructions, recipeUser)
     event.preventDefault();
   })
 
@@ -36,14 +36,14 @@ function attachListeners(){
   })
   }
 
-  function createRecipe(data){
+  function createRecipe(name, status, instructions, user){
     $.ajax({
       url: '/recipes',
       method: 'POST',
       dataType: 'json',
       data: {
         recipe: {
-          name: name, status: status
+          name: name, status: status, instructions: instructions, user_id: parseInt(user)
         }
       },
       success: function(data){
