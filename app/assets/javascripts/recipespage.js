@@ -6,13 +6,17 @@
 
 function attachListeners(){
 
-  $("#showrecipes").on("click", function(event){
-    showrecipes()
+  $("#showRecipes").on("click", function(event){
+    showRecipes()
     event.preventDefault();
   })
 
-  $("#createrecipe").on("click", function(event){
-    createrecipe()
+  $('form').on("submit", function(event){
+    var recipeName = $('#recipe_name').val()
+    var recipeStatus = $('#recipe_status').val()
+    var recipeInstructions = $('#recipe_instructions').val()
+    var recipeUser = $('#recipe_user_id').val()
+    createRecipe(event)
     event.preventDefault();
   })
 
@@ -20,7 +24,7 @@ function attachListeners(){
   }
 
 
-  function showrecipes(){
+  function showRecipes(){
   $.getJSON('/recipes', function(data){
     $("tbody").text("")
     data.forEach(function(recipe){
@@ -30,6 +34,22 @@ function attachListeners(){
       }
     })
   })
+  }
+
+  function createRecipe(data){
+    $.ajax({
+      url: '/recipes',
+      method: 'POST',
+      dataType: 'json',
+      data: {
+        recipe: {
+          name: name, status: status
+        }
+      },
+      success: function(data){
+      }
+    })
+
   }
 
 
