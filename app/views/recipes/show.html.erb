@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -17,15 +16,18 @@
   <%= render 'recipes/ingredients', recipe: @recipe %>
 </p>
 
-<%= link_to "Add Another Ingredient", new_recipe_ingredient_path(@recipe) %>
+<%= button_to "Add Another Ingredient", new_recipe_ingredient_path(@recipe) %>
+
+
+<p>
+  <%= render  'recipes/instructions', recipe: @recipe %>
+</p>
 
 <p>
   <%= render 'recipes/comments', recipe: @recipe %>
 </p>
 
-<p>
-  <%= render  'recipes/instructions', recipe: @recipe %>
-</p>
   
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> 
+

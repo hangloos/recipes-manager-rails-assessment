@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = current_user.recipes.build
-    @ingredients = 12.times {@recipe.ingredients.build}
+    @ingredients = 2.times {@recipe.ingredients.build}
     @recipe.recipe_categories.build.build_category
   end
 

@@ -9,5 +9,11 @@ module RecipesHelper
     end
   end
 
+  def status_changed_to_cooked_helper(recipe)
+    if recipe.status
+      return "- Cooked"
+    end
+  end
+
 
 end

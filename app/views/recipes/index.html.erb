@@ -9,17 +9,14 @@
 <table>
   <thead>
     <tr>
-    <button id="showrecipes">Show Recipes</button>
+    <%= link_to "Show Recipes", recipes_path,  :remote => true %>
       <th>Name</th>
       <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
-  <td id="recipename"></td>
-  <td id="recipecooked"></td>
-  <td id="recipeuser"></td>
-    
+  <td id="recipename"></td>    
   </tbody>
 </table>
 
