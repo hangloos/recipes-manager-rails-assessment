@@ -22,7 +22,10 @@
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'New Recipe', new_recipe_path, :remote => true %>
+<div id="newrecipeform">
+  
+</div>
 
 <%= render partial: 'ratings' %>
 
