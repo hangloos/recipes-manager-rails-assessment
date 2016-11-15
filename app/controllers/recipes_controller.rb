@@ -34,7 +34,6 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-
     @recipe = current_user.recipes.build(recipe_params)
 
     respond_to do |format|
