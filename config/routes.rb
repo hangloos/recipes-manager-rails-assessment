@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post '/change_status' => 'recipes#update_status'
   post '/ratings_search' => 'recipes#ratings_search'
 
+  get '/recipes/ingredients/new' => 'ingredients#new'
+
 end

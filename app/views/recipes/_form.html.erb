@@ -1,4 +1,5 @@
 <% recipe = current_user.recipes.build %>
+<% ingredient = recipe.ingredients.build %>
 
 <%= form_for(recipe) do |f| %>
   <% if recipe.errors.any? %>
@@ -34,12 +35,15 @@
     <%= f.hidden_field :user_id %>
   </div>
 
+  <%= link_to "Add Ingredient", recipes_ingredients_new_path, :remote => true %>  
 
-  <%= render 'recipes/ingredientsfields', f: f %>
-  
+    <%= render 'recipes/ingredientsfields', f: f %>
+
 
   <div class="actions" id="createrecipe">
     <%= f.submit %>
   </div>
 <% end %>
+
+
 
