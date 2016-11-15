@@ -1,5 +1,4 @@
 
-var html = "<%= j(render('recipes/recipespartial')) %> "
+var html = "<%= j render('recipes/recipespartial') %> "
 $("#recipename").html("")
-debugger
-$("#recipename").append(raw(html))
+$("#recipename").append("<%= j render('recipes/recipespartial') %> ")
