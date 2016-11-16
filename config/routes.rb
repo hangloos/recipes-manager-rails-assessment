@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get '/recipes/ingredients/new' => 'ingredients#new'
 
+  post '/ingredients' => 'ingredients#create'
+
 end

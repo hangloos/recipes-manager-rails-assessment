@@ -16,9 +16,6 @@
   <%= render 'recipes/ingredients', recipe: @recipe %>
 </p>
 
-<%= link_to "Add Another Ingredient", new_recipe_ingredient_path(@recipe) %>
-
-
 <p>
   <%= render  'recipes/instructions', recipe: @recipe %>
 </p>
@@ -28,5 +25,5 @@
 </p>
   
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> | <%= link_to "Delete Recipe", recipe_path(@recipe), :method => "DELETE" %>
+<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> | <%= link_to "Delete Recipe", recipe_path(@recipe), :method => "DELETE" %>
 

@@ -1,0 +1,15 @@
+<form method="post" action="/ingredients">
+
+  <div>
+    Ingredient:<input type="text" name="recipe[ingredients_attributes][][name]" id="recipe_ingredients_attributes_name">
+  </div>
+
+  <div class="field">
+    Quantity:<input type="text" name="recipe[ingredients_attributes][][quantity]" id="recipe_ingredients_attributes_quantity">
+  </div>
+
+  <input type="hidden" name="autehticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" name="Add Ingredient" >
+
+</form>
