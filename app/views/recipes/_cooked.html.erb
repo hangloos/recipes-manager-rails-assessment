@@ -2,7 +2,8 @@
     <strong>Cooked this recipe?:</strong>
     <%= @recipe.cooked_or_not %> | <div id="cookedrecipe"><%= link_to "Cooked This Recipe?"%></div>
   <% else %>
-    <strong>Cooked this recipe?:</strong> <%= @recipe.cooked_or_not %> <div id=addcomment><%= link_to "Add Comment", new_recipe_comment_path(@recipe), :remote => true %></div>
+    <%= @recipe.cooked_or_not %>
+    <%= render '/comments/form' %> 
   <% end %>
 
   <div id="newcommentform">

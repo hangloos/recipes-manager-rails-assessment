@@ -12,13 +12,7 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :recipe_categories, :reject_if => :all_blank
   #accepts_nested_attributes_for :categories, :reject_if => :all_blank
   
-  def cooked_or_not
-    if self.status
-      "You have cooked this recipe!"
-    else
-      "You have not cooked this recipe yet."
-    end
-  end
+ 
 
 
 

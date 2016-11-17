@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  post '/change_status' => 'recipes#update_status'
+  post '/change_status' => 'recipes#change_status'
   post '/ratings_search' => 'recipes#ratings_search'
 
   get '/recipes/ingredients/new' => 'ingredients#new'

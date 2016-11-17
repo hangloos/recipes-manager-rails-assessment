@@ -9,7 +9,18 @@
 </p>
 
 <p>
- <%= render 'recipes/cooked' %>
+  <% if @recipe.status != true %>
+    <strong>Cooked this recipe?:</strong>
+    <div id="cooked_html_location"></div><div id="cooked_location_2"><%= "You have not cooked this recipe yet! Give it a shot! " %></div>
+    <div id="cookedrecipe"><%= link_to "Cooked This Recipe? Click Here To Add Comments"%></div>
+  <% else %>
+    <%= "You have cooked this recipe! Now add a comment!" %>
+    <%= render '/comments/form', recipe: @recipe %> 
+  <% end %>
+
+  <div id="new_comment_form">
+  
+  </div>
 </p>
 
 <p>
@@ -21,7 +32,7 @@
 </p>
 
 <p>
-  <%= render 'recipes/comments', recipe: @recipe %>
+  <% #render 'recipes/comments', recipe: @recipe %>
 </p>
   
 

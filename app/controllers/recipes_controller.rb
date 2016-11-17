@@ -71,7 +71,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def update_status
+  def change_status
     @recipe = Recipe.find(params.keys[0])
     @recipe.status = true
     @recipe.save
