@@ -10,18 +10,26 @@
   $("#cookedrecipe").on("click", function(event){
     $("#cooked_html_location").append("You have cooked this recipe! Now add a comment!")
     $("#cooked_location_2").html("")
+    
     var idData = document.getElementById("hidden_recipe_id").innerHTML
     var url = '/change_status'
-    $.post(url, idData, function(success){
-      $("#new_comment_form").html("")
-      $("#new_comment_form").append("<%= j render('/comments/form') %>")
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: idData,
+      success: function(response){
+        $("#new_comment_form").html("")
+        html = "<% j render('/recipes/new_comment_form') %>"
+        $("#new_comment_form").append(html)
+      }
     })
 
-  })
+   })
 
 
   $(".new_comment").on("submit", function(event){
-    event.preventDefault()
+    
     $.ajax({
       type: "POST",
       url: this.action, 
@@ -33,6 +41,7 @@
       
        } 
     })
+    event.preventDefault()
 
   })
 

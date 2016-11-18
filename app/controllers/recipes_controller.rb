@@ -77,7 +77,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params.keys[0])
     @recipe.status = true
     @recipe.save
-    redirect_to recipe_path(@recipe)
+    render 'comments/show', :layout => false
   end
 
   def get_current_user

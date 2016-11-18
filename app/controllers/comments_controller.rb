@@ -37,7 +37,6 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     
        if @comment.save
-        #create a comments show view that shows one LI. 
         render 'comments/show', :layout => false
       else
         render 'recipes/show'
