@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @comment = Comment.new
+    @comments = @recipe.comments.order(created_at: :desc).page(params[:page])
     if @recipe.user != current_user
       redirect_to root_path
     end
