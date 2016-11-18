@@ -35,16 +35,13 @@ class CommentsController < ApplicationController
   def create
     @recipe = set_recipe
     @comment = @recipe.comments.build(comment_params)
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @recipe, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+    
+       if @comment.save
+        #create a comments show view that shows one LI. 
+        render 'comments/show', :layout => false
       else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        render 'recipes/show'
       end
-    end
   end
 
   # PATCH/PUT /comments/1

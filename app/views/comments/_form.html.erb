@@ -1,4 +1,3 @@
-<% @comment = @recipe.comments.build %>
 
 <%= form_for ([@recipe, @comment]) do |f| %>
   <% if @comment.errors.any? %>
@@ -23,11 +22,13 @@
     <%= f.text_field :comments %>
   </div>
 
-  <div class="field">
+  <div id="field_test">
     <%= f.hidden_field :recipe_id %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Create Comment" %>
+  <div id="hidden_recipe_id" style="display: none;"><%= @recipe.id %></div>
+
+  <div class="submit_comment_button">
+    <%= f.submit "Create Comment" , data: {disable_with: false} %>
   </div>
 <% end %>

@@ -1,3 +1,4 @@
+<div id="hidden_recipe_id" style="display: none;"><%= @recipe.id %></div>
 
 <p>
   <strong>Name:</strong>
@@ -31,10 +32,10 @@
   <%= render  'recipes/instructions', recipe: @recipe %>
 </p>
 
-<p>
-  <% #render 'recipes/comments', recipe: @recipe %>
-</p>
-  
+<div id="rating_comments_list">
+<%= render 'recipes/comments', recipe: @recipe %>
+</div>
+<br></br>  
 
 <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> | <%= link_to "Delete Recipe", recipe_path(@recipe), :method => "DELETE" %>
 

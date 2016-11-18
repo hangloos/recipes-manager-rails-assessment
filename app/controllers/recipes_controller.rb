@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @comment = Comment.new
     if @recipe.user != current_user
       redirect_to root_path
     end
