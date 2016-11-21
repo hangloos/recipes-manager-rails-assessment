@@ -1,4 +1,4 @@
-<form method="post" action="/ingredients">
+<form method="POST" action="/recipes/<%=@recipe.id%>">
 
   <div>
     Ingredient:<input type="text" name="recipe[ingredients_attributes][][name]" id="recipe_ingredients_attributes_name">
@@ -8,7 +8,8 @@
     Quantity:<input type="text" name="recipe[ingredients_attributes][][quantity]" id="recipe_ingredients_attributes_quantity">
   </div>
 
-  <input type="hidden" name="autehticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
 
   <input type="submit" name="Add Ingredient" >
 

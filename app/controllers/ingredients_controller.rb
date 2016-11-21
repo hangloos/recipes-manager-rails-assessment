@@ -18,7 +18,8 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/new
   def new
-    #@recipe = set_recipe
+    #binding.pry
+    @recipe = set_recipe
      # if @recipe
       #  @ingredient = @recipe.ingredients.build
       #  render '/ingredients/_form'

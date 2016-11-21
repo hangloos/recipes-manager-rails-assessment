@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   post '/ingredients' => 'ingredients#create'
 
+  post '/recipes/:id' => 'recipes#update'
+
 end

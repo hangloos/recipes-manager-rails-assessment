@@ -29,6 +29,11 @@
 </p>
 
 <p>
+  <%= link_to "Add Another Ingredient", new_recipe_ingredient_path(@recipe), :remote => true %>
+</p>
+<div id="extraingredients"></div>
+
+<p>
   <%= render  'recipes/instructions', recipe: @recipe %>
 </p>
 
