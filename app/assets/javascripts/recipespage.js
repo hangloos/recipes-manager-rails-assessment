@@ -32,7 +32,7 @@
     
     $.ajax({
       type: "POST",
-      url: this.action, 
+      url: this.action,
       data: $(this).serialize(),
       success: function(response){
       $("#rating_comments_list").append(response)
@@ -43,6 +43,24 @@
     })
     event.preventDefault()
 
+  })
+
+  $(".ratings_search_form").on("submit", function(event){
+    $.ajax({
+      type: "GET",
+      url: '/comments',
+      dataType: 'JSON',
+      success: function(response){
+        var searchNumber = $("#ratings_search_value").val()
+        response.forEach(function(e){
+          if (e.rating == searchNumber) {
+            $("#ratings_search_location").append('<li>' + new Date(e.created_at) + "-" + e.comments + "-" + e.rating + '</li>')
+          }
+        })
+      }
+    })
+
+    event.preventDefault()
   })
 
 
