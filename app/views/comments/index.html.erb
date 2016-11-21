@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @recipe.comments.each do |comment| %>
+    <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.rating %></td>
         <td><%= comment.comments %></td>
@@ -24,5 +24,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Comment', new_recipe_comment_path(@recipe) %>

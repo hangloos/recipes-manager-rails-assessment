@@ -74,11 +74,12 @@ class RecipesController < ApplicationController
   end
 
   def change_status
-    @recipe = Recipe.find(params.keys[0])
+    @recipe = set_recipe
     @recipe.status = true
     @recipe.save
     redirect_to recipe_path(@recipe)
   end
+
 
   def get_current_user
     render json: {id: current_user.id}

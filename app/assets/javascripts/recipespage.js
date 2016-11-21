@@ -11,7 +11,7 @@
     $("#cooked_html_location").append("You have cooked this recipe! Now add a comment!")
     $("#cooked_location_2").html("")
     
-    var idData = document.getElementById("hidden_recipe_id").innerHTML
+    var idData = {id: document.getElementById("hidden_recipe_id").innerHTML}
     var url = '/change_status'
 
     $.ajax({
@@ -44,6 +44,7 @@
     event.preventDefault()
 
   })
+
 
 
   }

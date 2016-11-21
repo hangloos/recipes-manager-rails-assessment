@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
   
   resources :recipes do 
-    resources :ingredients, :comments, :categories
+    resources :ingredients, :categories
+  end
+
+  resources :recipes do
+    resources :comments, except: :new
   end
 
   root 'welcome#index'
@@ -17,5 +21,7 @@ Rails.application.routes.draw do
   post '/ingredients' => 'ingredients#create'
 
   post '/recipes/:id' => 'recipes#update'
+
+  get '/comments' => 'comments#index'
 
 end
