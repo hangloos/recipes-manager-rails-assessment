@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :recipes do
-    resources :comments, except: :new
+    resources :comments
   end
 
   root 'welcome#index'
