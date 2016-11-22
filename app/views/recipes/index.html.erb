@@ -1,32 +1,23 @@
- <h1>Recipes</h1>
+ <h1>Recipes</h1><%= link_to "Show Recipes", recipes_path,  :remote => true %>
   
-  <%= javascript_tag do %>
-  window.user_id = "<%=current_user.id.to_i%>";
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="1">Name</th>
+      </tr>
+    </thead>
 
-<table>
-  <thead>
-    <tr>
-    <%= link_to "Show Recipes", recipes_path,  :remote => true %>
-      <th>Name</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <td id="recipename"></td>    
-  </tbody>
-</table>
+    <tbody>
+    <td id="recipename"></td>    
+    </tbody>
+  </table>
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path, :remote => true %>
-<div id="newrecipeform">
-  
-</div>
+  <%= link_to 'New Recipe', new_recipe_path, :remote => true %>
+  <div id="newrecipeform"></div>
 
-<%= render partial: 'ratings' %>
+  <%= render partial: 'ratings' %>
 
-<div id="ratings_search_location"></div>
 
 
