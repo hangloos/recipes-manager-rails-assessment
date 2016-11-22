@@ -1,46 +1,42 @@
-<div id="hidden_recipe_id" style="display: none;"><%= @recipe.id %></div>
+  <div id="hidden_recipe_id" style="display: none;"><%= @recipe.id %></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
-
-<p>
- <%= render 'recipes/categories', recipe: @recipe %>
-</p>
-
-<p>
-  <% if @recipe.status != true %>
-    <strong>Cooked this recipe?:</strong>
-    <div id="cooked_html_location"></div><div id="cooked_location_2"><%= "You have not cooked this recipe yet! Give it a shot! " %></div>
-    <div id="cookedrecipe"><%= link_to "Cooked This Recipe? Click Here To Add Comments"%></div>
-  <% else %>
-    <%= "You have cooked this recipe! Now add a comment!" %>
-    <%= render '/comments/form', recipe: @recipe %> 
-  <% end %>
-
-  <div id="new_comment_form">
-  
+  <div>
+    <strong>Name:</strong>
+    <%= @recipe.name %>
   </div>
-</p>
 
-<p>
+<br>
+
+  <%= render 'recipes/categories', recipe: @recipe %>
+
+<br>
+
   <%= render 'recipes/ingredients', recipe: @recipe %>
-</p>
 
-<p>
-  <%= link_to "Add Another Ingredient", new_recipe_ingredient_path(@recipe), :remote => true %>
-</p>
-<div id="extraingredients"></div>
+<br>
 
-<p>
   <%= render  'recipes/instructions', recipe: @recipe %>
-</p>
 
-<div id="rating_comments_list">
-<%= render 'recipes/comments', recipe: @recipe %>
-</div>
-<br></br>  
+<br>
 
-<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> | <%= link_to "Delete Recipe", recipe_path(@recipe), :method => "DELETE" %>
+  <div>
+    <% if @recipe.status != true %>
+      <strong>Cooked this recipe?: You have not cooked this recipe yet! Give it a shot!</strong>
+      <div id="cooked_html_location"></div><div id="cooked_location_2"></div>
+      <div id="cookedrecipe"><%= link_to "Cooked This Recipe? Click Here To Add Comments"%></div>
+    <% else %>
+      <h5>You have cooked this recipe! Add some comments for next time!</h5>
+      <%= render '/comments/form', recipe: @recipe %> 
+    <% end %>
+
+    <div id="new_comment_form">
+    
+    </div>
+  </div>
+<br>
+  
+  <%= render 'recipes/comments', recipe: @recipe %>
+<br>  
+
+  <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> | <%= link_to "Delete Recipe", recipe_path(@recipe), :method => "DELETE" %>
 

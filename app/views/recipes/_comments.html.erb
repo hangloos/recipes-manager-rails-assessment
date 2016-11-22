@@ -1,4 +1,6 @@
-<%= paginate @comments %>
-<% @comments.each do |comment| %>
-<li><%=comment.created_at.strftime("%B %d, %Y")%> | Rating: <%= comment.rating %> | Comments: <%= comment.comments %></li>
-<% end %>
+<div id="rating_comments_list">
+  <%= paginate @comments %>
+  <% @comments.each do |comment| %>
+  <li><%=comment.created_at.strftime("%B %d, %Y")%> | Rating: <%= comment.rating %> | Comments: <%= comment.comments %></li>
+  <% end %>
+</div>

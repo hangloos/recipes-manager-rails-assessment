@@ -1,5 +1,8 @@
-<% @recipe.categories.map do |category| %>
-<%= category.name %>
-<br>
-<% end %>
-<%= link_to "Add New Category", new_recipe_category_path(@recipe) %>
+<div>
+<strong>Category:</strong>
+  <% @recipe.categories.map do |category| %>
+  <%= category.name %>
+  <br>
+  <% end %>
+  <%= link_to "Add New Category", new_recipe_category_path(@recipe) %>
+</div>
