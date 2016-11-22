@@ -18,14 +18,12 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/new
   def new
-    #binding.pry
-    @recipe = set_recipe
-     # if @recipe
-      #  @ingredient = @recipe.ingredients.build
-      #  render '/ingredients/_form'
-     # else
-     #   render :new
-     # end
+    if params[:recipe_id]
+      @recipe = set_recipe
+      render '/ingredients/new_solo.js.erb'
+    else
+      @recipe = current_user.recipes.build
+    end
   end
 
   # GET /ingredients/1/edit
