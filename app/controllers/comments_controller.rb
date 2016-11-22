@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comments = Comment.all & current_user.comments
     respond_to do |format|
       format.html {render :index}
-      format.json {render json: @comments.to_json}
+      format.json {render json: @comments}
     end
   end
 

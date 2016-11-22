@@ -54,6 +54,7 @@
         var searchNumber = $("#ratings_search_value").val()
         response.forEach(function(e){
           if (e.rating == searchNumber) {
+            debugger
             $("#ratings_search_location").append('<li>' + new Date(e.created_at) + "-" + e.comments + "-" + e.rating + '</li>')
           }
         })
