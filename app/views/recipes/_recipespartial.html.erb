@@ -1,4 +1,5 @@
 
   <% current_user.recipes.each do |recipe| %>
-  <li><%= link_to recipe.name, recipe_path(recipe)%><%=status_changed_to_cooked_helper(recipe)%></li>
+  <td><%= link_to recipe.name, recipe_path(recipe)%><%=status_changed_to_cooked_helper(recipe)%></td>
+  <br></br>
   <% end %>

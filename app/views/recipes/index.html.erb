@@ -1,17 +1,7 @@
- <h1>Recipes</h1><%= link_to "Show Recipes", recipes_path,  :remote => true %>
-  
-  <table>
-    <thead>
-      <tr>
-        <th colspan="1">Name</th>
-      </tr>
-    </thead>
+ <h1>Recipes</h1><button id="showRecipes">Show Recipes</button>
 
-    <tbody>
-    <td id="recipename"></td>    
-    </tbody>
-  </table>
 
+ <div id="recipename"></div>
 <br>
 
   <%= link_to 'New Recipe', new_recipe_path, :remote => true %>

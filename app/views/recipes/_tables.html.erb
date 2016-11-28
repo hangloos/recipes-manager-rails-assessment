@@ -1,0 +1,13 @@
+ <table>
+    <thead>
+      <tr>
+        <th colspan="1" id="recipe_name_header">Name</th>
+      </tr>
+    </thead>
+
+    <tbody >
+      <% current_user.recipes.each do |recipe| %>
+        <td><%= link_to recipe.name, recipe_path(recipe)%><%=status_changed_to_cooked_helper(recipe)%></td>
+      <% end %>
+    </tbody>
+  </table>

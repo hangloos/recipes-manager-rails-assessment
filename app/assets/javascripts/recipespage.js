@@ -63,6 +63,46 @@
     event.preventDefault()
   })
 
+  $("#showRecipes").on("click", function(event){
+    $.ajax({
+      type: "GET",
+      url: '/recipes',
+      dataType: 'JSON',
+      success: function(response){
+        response.forEach(function(recipe){
+          var newRecipe = new Recipe(recipe)
+          newRecipe.appendToDom()
+        })
+      }
+    })
+
+  })
+
+   $(".new_recipe").on("submit", function(event){
+    alert("You got it!!")
+     $.ajax({
+      type: "POST",
+      url: "/recipes",
+      data: $(this).serialize(),
+      success: function(response){
+        debugger
+      }
+     })
+     event.preventDefault()
+  //   // get all of the values from the form 
+  //   // make a post request to /recipes
+  //   // have the recipes controller render json for @recipe instead of redirecting 
+  //   // create new JS Recipe and append to DOM .
+
+   })
+
+  }
 
 
+  function Recipe(attributes) {
+    this.name = attributes.name
+  }
+
+  Recipe.prototype.appendToDom = function() {
+    $('#recipename').append('<li>' + this.name + '</li>')
   }
