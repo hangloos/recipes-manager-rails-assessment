@@ -53,8 +53,11 @@
       success: function(response){
         var searchNumber = $("#ratings_search_value").val()
         response.forEach(function(e){
-          if (e.rating == searchNumber) {
+          if (e.rating == parseInt(searchNumber)) {
+            $("#ratings_search_location").html("")
             $("#ratings_search_location").append('<li>'+ "<a href=" + `/recipes/${e.recipe.id}` +`>${e.recipe.name}</a>` + "-" + Date(e.created_at) + "-" + e.comments + "-" + e.rating + '</li>')
+          } else {
+            alert("No recipes with that rating");
           }
         })
       }
@@ -79,21 +82,29 @@
   })
 
    $(".new_recipe").on("submit", function(event){
-    alert("You got it!!")
+    event.preventDefault();
+    
      $.ajax({
       type: "POST",
+      dataType: "JSON",
       url: "/recipes",
       data: $(this).serialize(),
       success: function(response){
-        debugger
+        var newRecipe = new Recipe(response)
+          newRecipe.appendToDom()
+          var $recipeform = $(".new_recipe")
       }
      })
-     event.preventDefault()
   //   // get all of the values from the form 
   //   // make a post request to /recipes
   //   // have the recipes controller render json for @recipe instead of redirecting 
   //   // create new JS Recipe and append to DOM .
 
+   })
+
+   $('.new_recipe_link').on("click", function(event){
+    event.preventDefault()
+    $("#newrecipeform").toggle();
    })
 
   }
@@ -103,11 +114,12 @@
     this.name = attributes.name
     this.id = attributes.id
     if(attributes.status == true){
-      this.status = "Cooked"
+      this.status = "Cooked Already"
+    } else {
+      this.status = "Have Not Cooked"
     }
   }
 
   Recipe.prototype.appendToDom = function() {
-    $("#recipename").html("")
-    $('#recipename').append('<li>' + '<a href=' + `/recipes/${this.id}>` + this.name + "-" + this.status + '</li>')
+    $('#recipename').before('<li>' + '<a href=' + `/recipes/${this.id}>` + this.name + '</a>' + "-" + this.status + '</li>')
   }

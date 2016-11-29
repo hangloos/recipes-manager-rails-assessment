@@ -4,8 +4,10 @@
  <div id="recipename"></div>
 <br>
 
-  <%= link_to 'New Recipe', new_recipe_path, :remote => true %>
-  <div id="newrecipeform"></div>
+  <%= link_to 'New Recipe', '#', class: 'new_recipe_link' %>
+  <div id="newrecipeform">
+    <%= render partial: 'recipes/form' %>
+  </div>
 
   <%= render partial: 'ratings' %>
 

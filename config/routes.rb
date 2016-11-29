@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  
-  resources :recipes do 
+  get '/recipes/new' => 'recipes#index'
+
+  resources :recipes, except: :new do 
     resources :ingredients, :categories
   end
 
