@@ -101,8 +101,13 @@
 
   function Recipe(attributes) {
     this.name = attributes.name
+    this.id = attributes.id
+    if(attributes.status == true){
+      this.status = "Cooked"
+    }
   }
 
   Recipe.prototype.appendToDom = function() {
-    $('#recipename').append('<li>' + this.name + '</li>')
+    $("#recipename").html("")
+    $('#recipename').append('<li>' + '<a href=' + `/recipes/${this.id}>` + this.name + "-" + this.status + '</li>')
   }
