@@ -52,12 +52,10 @@
       dataType: 'JSON',
       success: function(response){
         var searchNumber = $("#ratings_search_value").val()
+        $("#ratings_search_location").html("")
         response.forEach(function(e){
           if (e.rating == parseInt(searchNumber)) {
-            $("#ratings_search_location").html("")
             $("#ratings_search_location").append('<li>'+ "<a href=" + `/recipes/${e.recipe.id}` +`>${e.recipe.name}</a>` + "-" + Date(e.created_at) + "-" + e.comments + "-" + e.rating + '</li>')
-          } else {
-            alert("No recipes with that rating");
           }
         })
       }
@@ -92,7 +90,12 @@
       success: function(response){
         var newRecipe = new Recipe(response)
           newRecipe.appendToDom()
-          var $recipeform = $(".new_recipe")
+          $('#recipe_name')[0].value = ""
+          $('#recipe_status')[0].value = "1"
+          $('#recipe_instructions')[0].value = ""
+          $('#recipe_ingredients_attributes_name')[0].value = ""
+          $('#recipe_ingredients_attributes_quantity')[0].value = ""
+          
       }
      })
   //   // get all of the values from the form 
@@ -104,7 +107,9 @@
 
    $('.new_recipe_link').on("click", function(event){
     event.preventDefault()
-    $("#newrecipeform").toggle();
+
+     $("#newrecipeform").append("<% j render('/recipes/_form') %>")
+    // $("#newrecipeform").toggle();
    })
 
   }
