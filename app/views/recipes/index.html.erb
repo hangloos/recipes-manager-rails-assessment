@@ -5,8 +5,57 @@
 <br>
 
   <%= link_to 'New Recipe', '#', class: 'new_recipe_link' %>
-  <div id="newrecipeform">
-     <%= render partial: '/recipes/form' %>
+  <div id="newrecipeform" class="hidden">
+   <%= form_for @recipe do |f| %>
+
+    <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.check_box :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <%= link_to "Add Ingredient", recipes_ingredients_new_path, :remote => true %> 
+
+  <%= f.fields_for :ingredients_attributes do |ingredient| %>
+    <%= render 'recipes/ingredients_textfield' ,ingredient: ingredient %>
+  <% end %> 
+  
+  <div id="extraingredients">
+    
+  </div>
+
+
+  <div class="actions" id="createrecipe">
+    <%= f.submit "Create Recipe", 'data-disable-with' => false %>
+  </div>
+	<% end %>
+  </div>
+
   </div>
 
   <%= render partial: 'ratings' %>

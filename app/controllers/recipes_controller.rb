@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = current_user.recipes
+    @recipe = Recipe.new
     respond_to do |format|
       format.html
       format.json {render json: @recipes }

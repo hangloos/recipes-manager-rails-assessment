@@ -19,9 +19,6 @@
       url: url,
       data: idData,
       success: function(response){
-        $("#new_comment_form").html("")
-        html = "<% j render('/recipes/new_comment_form') %>"
-        $("#new_comment_form").append(html)
       }
     })
 
@@ -98,19 +95,14 @@
           
       }
      })
-  //   // get all of the values from the form 
-  //   // make a post request to /recipes
-  //   // have the recipes controller render json for @recipe instead of redirecting 
-  //   // create new JS Recipe and append to DOM .
 
    })
 
    $('.new_recipe_link').on("click", function(event){
     event.preventDefault()
-
-     $("#newrecipeform").append("<% j render('/recipes/_form') %>")
-    // $("#newrecipeform").toggle();
+    $("#newrecipeform").toggle();
    })
+
 
   }
 
