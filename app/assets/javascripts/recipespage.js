@@ -91,7 +91,6 @@
         var newRecipe = new Recipe(response)
           newRecipe.appendToDom()
           $('#recipe_name')[0].value = ""
-          $('#recipe_status')[0].value = "1"
           $('#recipe_instructions')[0].value = ""
           $('#recipe_ingredients_attributes_name')[0].value = ""
           $('#recipe_ingredients_attributes_quantity')[0].value = ""
