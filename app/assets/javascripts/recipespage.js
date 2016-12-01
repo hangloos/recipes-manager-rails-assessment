@@ -56,9 +56,9 @@
         response.forEach(function(e){
           if (e.rating == parseInt(searchNumber)) {
             $("#ratings_search_location").append('<li>'+ "<a href=" + `/recipes/${e.recipe.id}` +`>${e.recipe.name}</a>` + "-" + Date(e.created_at) + "-" + e.comments + "-" + e.rating + '</li>')
-            $("#ratings_search_value").val("")
           }
         })
+        $("#ratings_search_value").val("")
       }
     })
 
