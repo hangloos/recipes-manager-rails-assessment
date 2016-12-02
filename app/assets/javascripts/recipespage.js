@@ -86,13 +86,16 @@
       url: "/recipes",
       data: $(this).serialize(),
       success: function(response){
+        $("#errors").html("")
         var newRecipe = new Recipe(response)
           newRecipe.appendToDom()
           $('#recipe_name')[0].value = ""
           $('#recipe_instructions')[0].value = ""
           $('#recipe_ingredients_attributes_name')[0].value = ""
           $('#recipe_ingredients_attributes_quantity')[0].value = ""
-          
+      },
+      error: function(data){
+        appendErrors(data.responseJSON)
       }
      })
 
@@ -104,6 +107,12 @@
    })
 
 
+  }
+
+  function appendErrors(errors) {
+    errors.name.forEach(function(error){
+      $("#errors").append(error)
+    })
   }
 
 
@@ -120,3 +129,5 @@
   Recipe.prototype.appendToDom = function() {
     $('#recipename').before('<li>' + '<a href=' + `/recipes/${this.id}>` + this.name + '</a>' + "-" + this.status + '</li>')
   }
+
+
